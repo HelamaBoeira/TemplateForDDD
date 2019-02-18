@@ -266,9 +266,9 @@
       <Project>{bad26988-3e05-45be-a6b9-ee3ff6f1914a}</Project>
       <Name>ExampleDDD.Domain</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ExampleDDD.Infra.Data\ExampleDDD.Infra.Data.csproj">
-      <Project>{ADAF4F98-8D82-41A2-8B94-EC86A494B9CF}</Project>
-      <Name>ExampleDDD.Infra.Data</Name>
+    <ProjectReference Include="..\ProjetoModeloDDD.Infra.CrossCutting\ProjetoModeloDDD.Infra.CrossCutting.csproj">
+      <Project>{6138c1fa-6bb4-467b-86d3-0196d39aa26f}</Project>
+      <Name>ProjetoModeloDDD.Infra.CrossCutting</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

@@ -5,17 +5,12 @@ namespace ExampleDDD.MVC.App_Start
 {
     using System;
     using System.Web;
-    using ExampleDDD.Application;
-    using ExampleDDD.Application.Interfaces;
-    using ExampleDDD.Domain.Interfaces.Repositories;
-    using ExampleDDD.Domain.Interfaces.Services;
-    using ExampleDDD.Domain.Services;
-    using ExampleDDD.Infra.Data.Repositories;
     using Microsoft.Web.Infrastructure.DynamicModuleHelper;
 
     using Ninject;
     using Ninject.Web.Common;
     using Ninject.Web.Common.WebHost;
+    using ProjetoModeloDDD.Infra.CrossCutting.NinjectConfig;
 
     public static class NinjectWebCommon 
     {
@@ -67,18 +62,7 @@ namespace ExampleDDD.MVC.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
-            kernel.Bind(typeof(IAppServiceBase<>)).To(typeof(AppServiceBase<>));
-            kernel.Bind<IClienteAppService>().To<ClienteAppService>();
-            kernel.Bind<IProdutoAppService>().To<ProdutoAppService>();
-
-            kernel.Bind(typeof(IServiceBase<>)).To(typeof(ServiceBase<>));
-            kernel.Bind<IClienteService>().To<ClienteService>();
-            kernel.Bind<IProdutoService>().To<ProdutoService>();
-
-            kernel.Bind(typeof(IRepositoryBase<>)).To(typeof(RepositoryBase<>));
-            kernel.Bind<IClienteRepository>().To<ClienteRepository>();
-            kernel.Bind<IProdutoRepository>().To<ProdutoRepository>();
-
+            kernel.Load(new LoadInjectionModule());
 
         }        
     }
