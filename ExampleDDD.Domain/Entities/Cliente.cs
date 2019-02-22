@@ -19,9 +19,9 @@ namespace ExampleDDD.Domain.Entities
 
         public virtual IEnumerable<Produto> Produtos { get; set; }
 
-        public bool ClienteEspecial(Cliente cliente)
+        public bool ClienteEspecial()
         {
-            return cliente.Ativo && DateTime.Now.Year - cliente.DataCadastro.Year >= 5;
+            return this.Ativo && DateTime.Now.Year - this.DataCadastro.Year >= 5;
         }
     }
 }

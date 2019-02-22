@@ -33,12 +33,20 @@
   <ItemGroup>
     <Compile Include="Entities\Cliente.cs" />
     <Compile Include="Entities\Produto.cs" />
+    <Compile Include="Entities\Rules\ClienteRegraTeste.cs" />
+    <Compile Include="Entities\Validators\ClienteValidator.cs" />
+    <Compile Include="Entities\Validators\ProdutoValidator.cs" />
+    <Compile Include="Entities\Validators\ValidatorBase.cs" />
     <Compile Include="Interfaces\Repositories\IClienteRepository.cs" />
     <Compile Include="Interfaces\Repositories\IProdutoRepository.cs" />
     <Compile Include="Interfaces\Repositories\IRepositoryBase.cs" />
     <Compile Include="Interfaces\Services\IClienteService.cs" />
     <Compile Include="Interfaces\Services\IProdutoService.cs" />
     <Compile Include="Interfaces\Services\IServiceBase.cs" />
+    <Compile Include="Interfaces\Validators\IClienteValidator.cs" />
+    <Compile Include="Interfaces\Validators\IProdutoValidator.cs" />
+    <Compile Include="Interfaces\Validators\IRule.cs" />
+    <Compile Include="Interfaces\Validators\IValidatorBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\ClienteService.cs" />
     <Compile Include="Services\ProdutoService.cs" />

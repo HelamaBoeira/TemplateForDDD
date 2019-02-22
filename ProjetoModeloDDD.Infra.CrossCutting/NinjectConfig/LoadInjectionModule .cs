@@ -1,7 +1,9 @@
 ﻿using ExampleDDD.Application;
 using ExampleDDD.Application.Interfaces;
+using ExampleDDD.Domain.Entities.Validators;
 using ExampleDDD.Domain.Interfaces.Repositories;
 using ExampleDDD.Domain.Interfaces.Services;
+using ExampleDDD.Domain.Interfaces.Validators;
 using ExampleDDD.Domain.Services;
 using ExampleDDD.Infra.Data.Repositories;
 using Ninject.Modules;
@@ -23,6 +25,13 @@ namespace ProjetoModeloDDD.Infra.CrossCutting.NinjectConfig
             Bind(typeof(IRepositoryBase<>)).To(typeof(RepositoryBase<>));
             Bind<IClienteRepository>().To<ClienteRepository>();
             Bind<IProdutoRepository>().To<ProdutoRepository>();
+
+            Bind(typeof(IValidatorBase<>)).To(typeof(ValidatorBase<>));
+            Bind<IClienteValidator>().To<ClienteValidator>();
+            Bind<IProdutoValidator>().To<ProdutoValidator>();
+
+
+
         }
     }
 }

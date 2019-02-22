@@ -19,7 +19,7 @@ namespace ExampleDDD.Domain.Services
 
         public IEnumerable<Cliente> GetClientesEspeciais(IEnumerable<Cliente> clientes)
         {
-            return clientes.Where(c => c.ClienteEspecial(c));
+            return clientes.Where(c => c.ClienteEspecial());
         }
     }
 }

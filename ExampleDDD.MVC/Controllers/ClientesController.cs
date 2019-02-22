@@ -52,10 +52,15 @@ namespace ExampleDDD.MVC.Controllers
             if (ModelState.IsValid)
             {
                 var clienteDomain = Mapper.Map<ClienteViewModel, Cliente>(cliente);
-                _clienteApp.Add(clienteDomain);
-                return RedirectToAction("Index");                  
-            }
+                var result = _clienteApp.Add(clienteDomain);
+                if (result.Success)
+                {
+                    return RedirectToAction("Index");
+                }
+                foreach (var error in result.ErrorsMessage)
+                    ModelState.AddModelError("", error);
 
+            }
             return View(cliente);
             
         }
@@ -75,8 +80,13 @@ namespace ExampleDDD.MVC.Controllers
             if (ModelState.IsValid)
             {
                 var clienteDomain = Mapper.Map<ClienteViewModel, Cliente>(cliente);
-                _clienteApp.Update(clienteDomain);
-                return RedirectToAction("Index");
+                var result = _clienteApp.Update(clienteDomain);
+                if (result.Success)
+                {
+                    return RedirectToAction("Index");
+                }
+                foreach (var error in result.ErrorsMessage)
+                    ModelState.AddModelError("", error);
             }
 
             return View(cliente);

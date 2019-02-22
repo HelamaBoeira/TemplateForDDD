@@ -36,6 +36,7 @@
     <Compile Include="Interfaces\IAppServiceBase.cs" />
     <Compile Include="Interfaces\IClienteAppService.cs" />
     <Compile Include="Interfaces\IProdutoAppService.cs" />
+    <Compile Include="OperationResult.cs" />
     <Compile Include="ProdutoAppService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

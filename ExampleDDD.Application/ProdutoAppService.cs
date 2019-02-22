@@ -2,6 +2,7 @@
 using ExampleDDD.Application.Interfaces;
 using ExampleDDD.Domain.Entities;
 using ExampleDDD.Domain.Interfaces.Services;
+using ExampleDDD.Domain.Interfaces.Validators;
 
 namespace ExampleDDD.Application
 {
@@ -9,8 +10,8 @@ namespace ExampleDDD.Application
     {
         private readonly IProdutoService _produtoService;
 
-        public ProdutoAppService(IProdutoService produtoService)
-            :base(produtoService)
+        public ProdutoAppService(IProdutoService produtoService, IProdutoValidator produtoValidator)
+            :base(produtoService, produtoValidator)
         {
             _produtoService = produtoService;
         }
